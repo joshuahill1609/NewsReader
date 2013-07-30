@@ -1,15 +1,16 @@
 class FeedsController < ApplicationController
+
   def index
     respond_to do |format|
       format.html {
         render :index
       }
-      format.json { render :json => Feed.all }
+      format.json { render :json => current_user.feeds }
     end
   end
 
   def create
-    feed = Feed.find_or_create_by_url(params[:feed][:url])
+    feed = current_user.feeds.create(params[:feed])
     if feed
       render :json => feed
     else
@@ -19,6 +20,7 @@ class FeedsController < ApplicationController
 
   def show
     feed = Feed.find(params[:id])
+    feed.reload
     render :json => feed
   end
 end

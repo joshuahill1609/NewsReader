@@ -1,7 +1,16 @@
 <ul>
 <% feeds.each(function(feed){ %>
   <li>
-  <a href="#/show/<%= feed.escape('id') %>"><%= feed.escape("title") %>
+  <a href="#/show/<%= feed.escape('id') %>"><%= feed.escape("title") %></a>
   </li>
 <% }) %>
 </ul>
+
+<form id="addForm">
+  Title
+  <input type="text" name="feed[title]" id="feedTitle">
+  URL
+  <input type="text" name="feed[url]" id ="feedUrl">
+
+  <button id="feedAdder">Add Feed</button>
+</form>

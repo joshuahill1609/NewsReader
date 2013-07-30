@@ -3,7 +3,7 @@
 </div>
 
 <script type="application/json" id="bootstrapped_feeds">
-  <%= Feed.all.to_json.html_safe %>
+  <%= current_user.feeds.to_json.html_safe %>
 </script>
 
 <script>

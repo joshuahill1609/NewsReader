@@ -1,4 +1,8 @@
 NewReader.Views.FeedsIndexView = Backbone.View.extend({
+  events: {
+    "click #feedAdder": "addFeed"
+  },
+
   initialize: function(){
 
   },
@@ -12,5 +16,11 @@ NewReader.Views.FeedsIndexView = Backbone.View.extend({
 
     that.$el.html(renderedContent);
     return that;
-  }
+  },
+
+  // addFeed: function(){
+  //   var that = this;
+  //   $.post()
+  //   console.log("Hi");
+  // }
 })
