@@ -1,8 +1,15 @@
-<h1>Hello World</h1>
 <div id='content'>
 
 </div>
 
-<script>
+<script type="application/json" id="bootstrapped_feeds">
+  <%= Feed.all.to_json.html_safe %>
+</script>
 
+<script>
+$(function(){
+  var feeds = JSON.parse($("#bootstrapped_feeds").html());
+
+  window.NewReader.initialize($("#content"),feeds)
+})
 </script>

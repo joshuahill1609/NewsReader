@@ -1,7 +1,9 @@
 class FeedsController < ApplicationController
   def index
     respond_to do |format|
-      format.html { render :index }
+      format.html {
+        render :index
+      }
       format.json { render :json => Feed.all }
     end
   end
@@ -13,5 +15,10 @@ class FeedsController < ApplicationController
     else
       render :json => { error: "invalid url" }, status: :unprocessable_entity
     end
+  end
+
+  def show
+    feed = Feed.find(params[:id])
+    render :json => feed
   end
 end

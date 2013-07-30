@@ -20,6 +20,10 @@ class Feed < ActiveRecord::Base
     feed
   end
 
+  def as_json(options = {})
+    super(options.merge(include: [:entries]))
+  end
+
   def reload
     # reloads entries
     begin
@@ -30,6 +34,7 @@ class Feed < ActiveRecord::Base
       existing_entry_guids = Entry.pluck(:guid).sort
       feed_data.entries.each do |entry_data|
         unless existing_entry_guids.include?(entry_data.guid)
+          # puts entry_data
           Entry.create_from_json!(entry_data, self)
         end
       end
