@@ -5,6 +5,7 @@ NewReader.Views.FeedsShowView = Backbone.View.extend({
 
   initialize: function(id){
     this.id = id;
+    this.refresh();
   },
 
   render: function(){
