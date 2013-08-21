@@ -1,4 +1,4 @@
-# NewsReader
+== NewsReader
 
 A web app that allows you to enter a RSS feed and follow all your favorite news
 sources in one spot.
