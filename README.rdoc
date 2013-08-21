@@ -1,3 +1,9 @@
-== Welcome to New Reader Demo
+# NewsReader
 
-Good luck. Have fun.
+A web app that allows you to enter a RSS feed and follow all your favorite news
+sources in one spot.
+
+== Tech Used
+
+* Rails API
+* Backbone.js
